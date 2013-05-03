@@ -1,0 +1,3 @@
+Flippi is a Wiki clone - that is, a system where you or anybody else can view and create pages on-the-fly.
+
+For those interested, Flippi was written in Haskell by Philippa Cowderoy and is freely available under the BSD license. It can be found at http://www.flippac.org/projects/flippi/ and a running copy is available at http://www.scannedinavian.org/cgi-bin/flippi/flippi .

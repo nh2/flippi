@@ -1,0 +1,83 @@
+Flippi v0.03: A Wiki clone written in Haskell
+=============================================
+
+As the title suggests, Flippi is a Wiki clone - a fairly basic one at 
+present, written in Haskell by Philippa Cowderoy and released under the BSD
+license. There's an installation of Flippi running at 
+http://www.scannedinavian.org/cgi-bin/flippi/flippi - hopefully, details of
+user modifications, new releases etc will be kept there.
+
+Requirements: Flippi is written in plain Haskell 98 using a recent version
+              of the hierarchical libraries - it builds fine under 
+              GHC 6.21, doesn't build under 5.02, hasn't been tested anywhere
+              else.
+
+To configure: Edit the source a little. The only really critical thing is
+              where the data files go - this can be changed by editing the
+              function dataDirectory in the PageIO module. The default is a
+              directory data under the directory Flippi is run from.
+              
+              To change how the pages look on screen, edit PageTemplates.hs.
+              
+              To change the wiki markup, edit DeWikify.hs.
+              
+              Scripts are ordinary functions of type 
+              [(String,String)] -> IO Html - to make one available, add an
+              entry to the list "scripts" in Scripts.hs. It's probably a
+              good idea if anybody distributing scripts they've written
+              includes a fuller description of how to do this in the 
+              documentation so as to make things easier for users who don't
+              know Haskell.
+
+Installation: Should be pretty simple: either compile the lot (a GHC --make 
+              works fine) and set it up as a CGI executable or run it via 
+              your preferred Haskell interpreter like any other script.
+              
+              GHC users should find some variant on this works:
+              "ghc --make Flippi.hs -o <foo>" where <foo> is the name of 
+              the resulting executable.
+              
+              Optionally, copy the files found under data\ in the 
+              distribution to wherever the CGI will be looking for page
+              data - these initial pages document the markup syntax and tell 
+              users you're running Flippi. If you don't want to do this, 
+              you'll want to create a FrontPage - point a browser at the CGI
+              and follow the link to create it.
+
+History:
+--------
+
+v0.03: * Added scripting API and corresponding syntax 
+          (see Script.hs, ScriptSyntax.hs)
+       * Added RecentChanges script
+       * Added HelloWorld example script in Script.hs
+       * Added getPagenames to PageIO
+       * Restricted page requests to valid pagenames as defined by a
+         pattern in DeWikify (an isPagename function is exported by
+         PageIO)
+       * hopefully removed DOS/UNIX data issue - all data files are now 
+         written out in binary format, all input is done in text mode and
+         then has CRLFs forcibly converted to LFs. The parser will read 
+         both LF and CRLF as new lines, though this should never be 
+         needed now.
+       * Data files now go in a specified directory rather than having
+         a specified prefix
+       * A couple more bugfixes
+
+v0.02: * Added proper (first edit wins) edit conflict resolution
+       * Fixed some potential holes such as editing the page ""
+       * Better page templates
+       * Enough markup to just about be usable (paragraphs, escapes)
+
+v0.01: * Early version shown to a few friends
+       * Missing just about everything! But it does page IO
+
+Credits:
+--------
+
+Thanks to Shae Erisson for encouragement, discussion, a test server and above
+all else naming Flippi - if you don't like the name, blame it on him!
+
+-- 
+Philippa Cowderoy
+flippa@flippac.org

@@ -1,0 +1,3 @@
+If you're looking at this page, you may want to go here instead: [:RecentChanges||The RecentChanges script:]
+
+If not, you're probably looking for documentation about the RecentChanges script the link above leads to. The script's pretty simple, it produces a list of pages sorted by the date they were last updated on. It has one optional parameter called "count", which if set to an integer value will dictate how many pages it'll list - if count isn't set or isn't parseable, RecentChanges will default to 50.

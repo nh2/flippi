@@ -1,0 +1,13 @@
+The syntax available on Flippi is fairly simple at present.
+
+New paragraphs are created whenever two new lines are encountered.
+
+There are two ways to create a link to a page:
+
+WordsSmashedTogether is a link automatically - the pattern here is one upper case letter, one or more lower case letters, one upper case letter, one lower case letter then any number of letters.
+
+_[WordsSmashedTogether|description] gives a [LameEasterEgg|link with a description]
+
+As of version 0.03, Flippi also has support for scripts. See the ScriptLinks for information on how to provide links that run a script and show the result.
+
+Finally, if you don't want something that looks like a link to be a link, you can put an underscore in front of it to escape out the markup __LikeSo. You can even escape out an escape, which is how that example was written.

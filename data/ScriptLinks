@@ -1,0 +1,21 @@
+As of version 0.03, Flippi has support for scripts. Here're some example links to run them:
+
+_[:RecentChanges|count|description:]
+
+[:RecentChanges|count|description:]
+
+_[:RecentChanges|count="20"|Recent Changes (count set to 20):]
+
+[:RecentChanges|count="20"|Recent Changes (count set to 20):]
+
+_[:RecentChanges||Recent Changes with no parameters:]
+
+[:RecentChanges||Recent Changes with no parameters:]
+
+_[:RecentChanges|count="40"|:]
+
+[:RecentChanges|count="40"|:]
+
+In the above examples, RecentChanges is a script, and count is an optional parameter that the RecentChanges script understands. Flippi doesn't currently come with a script that takes more than one parameter, but here's a hypothetical example:
+
+_[:SomeScript|foo bar="baz" quux|This script does not exist:]
