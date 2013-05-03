@@ -34,8 +34,6 @@ import Network.CGI.Compat (wrapper)
 import Text.XHtml
 import System.IO
 import System.Time
-import List
-import Maybe
 
 import PageIO
 import DeWikify

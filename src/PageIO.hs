@@ -37,7 +37,9 @@ where
 import System.Time
 import System.Directory
 import System.IO
-import Monad
+import Control.Monad
+import qualified Control.Exception as E
+import Data.Convertible (convert)
 
 import DeWikify(pagenamePattern)
 import Text.ParserCombinators.Parsec as Parsec
@@ -52,10 +54,10 @@ isPagename pn = case (parse (do {pagenamePattern; eof;}) "" pn) of
 
 getPageLastUpdated :: String -> IO (Maybe ClockTime)
 getPageLastUpdated p =   
-  catch (do date <- getModificationTime (pagenameToFilename p)
-            return (Just date)
+  E.catch (do date <- getModificationTime (pagenameToFilename p)
+              return (Just (convert date))
         )
-        (\_ -> return Nothing)
+          (\e -> (e :: E.SomeException) `seq` return Nothing)
 
 deCRLF s = case parse (many (Parsec.try (do string "\r\n"; return '\n')
                              <|> 

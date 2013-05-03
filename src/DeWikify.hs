@@ -32,7 +32,6 @@ where
 
 import Text.XHtml
 import Text.ParserCombinators.Parsec
-import List
 
 import ScriptSyntax
 

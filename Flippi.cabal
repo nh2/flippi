@@ -8,7 +8,7 @@ license-file:        LICENSE
 author:              Philippa Cowderoy
 maintainer:          Philippa Cowderoy <flippa@flippac.org>
 homepage:            http://www.flippac.org/projects/flippi/
-build-depends:       base, haskell98, xhtml, cgi >= 3001.1.5.2, parsec, directory, old-time, containers
+build-depends:       base, xhtml, cgi >= 3001.1.5.2, parsec, directory, old-time, containers, convertible
 build-type:          Simple
 tested-with:         GHC==6.8
 data-files:          README, data/ScriptLinks, data/RecentChanges, data/LameEasterEgg, data/WhatIsFlippi,

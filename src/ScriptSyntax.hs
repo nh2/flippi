@@ -31,7 +31,6 @@ module ScriptSyntax (scriptLink, matchScriptLink) where
 
 import Text.XHtml
 import Text.ParserCombinators.Parsec
-import List
 
 data ScriptParm = Field String | Value String String
 

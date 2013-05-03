@@ -34,7 +34,6 @@ import DeWikify
 import PageIO
 import System.Time
 
-import Maybe
 
 htmlPage p t env = return $ (header $ thetitle t) +++ bodystuff p
                  where bodystuff h = body $ (viewform +++                                             

@@ -32,7 +32,7 @@ module RecentChanges (recentChanges) where
 import Text.XHtml
 import PageTemplates
 import PageIO
-import List
+import Data.List
 
 recentChanges env = do pns <- getPagenames
                        pds <- mapM getPageLastUpdated pns
